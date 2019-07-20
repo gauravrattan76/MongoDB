@@ -1,0 +1,19 @@
+const mocha = require('mocha');
+const assert = require('assert');
+var marioChar = require('./models/marioChar');
+
+describe("some demo tests",function(){
+
+    it("check if the entry is created in data base",function(done){
+       var char = new marioChar({
+           name:"Gaurav"
+       });
+      char.save().then(function(){
+          assert(char.isNew === false);
+          done();
+      });
+
+    });
+
+   
+});
