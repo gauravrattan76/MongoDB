@@ -1,0 +1,24 @@
+const mocha = require('mocha');
+const assert = require('assert');
+var marioChar = require('./models/marioChar');
+
+describe("Finding records",function(done){
+  beforeEach(function(){
+    var char = new marioChar({
+        name:"Gaurav"
+    });
+   char.save().then(function(){
+       //assert(char.isNew === false);
+       done();
+   });
+  });
+    it("Finds the record",function(){
+      marioChar.findOne({name:"Gaurav"}).then(function(result){
+          assert(result.name =="Gaurav");
+          done();
+      }); 
+
+    });
+
+   
+});
