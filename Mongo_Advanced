@@ -1,0 +1,90 @@
+Command to find records from a collection-
+____________________________________
+
+Db.fruitsCollection.find({qty:{$gt:4}})
+
+____________________________
+
+Db.fruitscollection.find({qty :{$gt:4}})— gives the record having values greater than 4
+
+__________________________
+
+Db.fruitscollection.find({qty:4})—gives the matching record having quantity as 4
+
+______________________
+
+db.fruitscollection.find({qty : {$in :[5,7]}})
+—it will return the records with the quantity value as 5 or 7
+
+Here $in works as a like or operator
+
+___________________________________
+
+
+db.fruitscollection.find({name:{$regex:/^a/}
+})— returns the record where the name starts with a 
+
+_________________________________
+
+db.fruitscollection.find().limit(3)
+
+—it gives the 3 records only
+
+_________________________________
+
+And operator in Mongo db-
+
+db.fruitscollection.find({
+name:"apples",
+qty:5
+})
+
+
+)
+___________________________________
+
+Or operator in mongo db-
+
+db.fruitscollection.find({
+$or :[
+{name:"apples"},{qty:6}
+]
+})
+
+__________________________________
+
+Editing documents-
+
+db.fruitscollection.update({name:"apples"},{$set:{name:"apples new"}})
+
+
+db.fruitscollection.find()
+
+
+_____________________________
+
+Saving new record-
+
+db.mycol.save(
+   {
+      "_id" : ObjectId(5983548781331adf45ec5), "title":"Tutorials Point New Topic",
+      "by":"Tutorials Point"
+   }
+)
+
+
+
+___________________________
+
+We have limit and skip methods
+
+
+Limit method is used to military the number off records shown
+
+Skip method is sued to skip the records and traverse through the rest
+
+______________________________
+
+Sorting data in mongo db-
+
+db.fruitscollection.find().sort({name:1})
