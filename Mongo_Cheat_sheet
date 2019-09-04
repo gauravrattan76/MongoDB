@@ -1,0 +1,110 @@
+Mongo Cheat sheet-
+____________________________________
+
+
+1.start the database using - mongod
+2.access the database using shell- mongo
+_____________________________________
+
+3.show dbs —it will show all the database
+
+4.use testdb — we are using the test db now.
+
+
+_____________________________________
+
+5.db.createCollection(“user”)
+
+________________________________
+
+6.show collections
+
+__________________________
+
+7.db.user.insert({“name”:”Ajith”})
+
+_________________________
+
+8.db.user.find()
+
+Db.user.find().pretty()
+___________________________
+
+
+9.db.user.find({“username”:”gaurav”})— helps in finding a specific type
+
+__________________________
+
+
+10.db.user.drop()
+
+_____________________
+
+11.db.createUser({"user": "ajitesh", "pwd": "gurukul", "roles": ["readWrite", "dbAdmin"]})
+
+Creating a user with the roles
+
+
+_______________________
+
+12.show users
+
+________________________-
+
+13.mongo -u USERNAME -p PASSWORD --authenticationDatabase DATABASENAME
+
+
+
+Example-
+
+mongo -u ajitesh -p gurukul --authenticationDatabase testdb
+
+
+__________________________
+For authentication and logging out of database
+
+db.auth("username", "password");
+
+//
+
+// Logout
+
+//
+
+db.logout()
+
+_______________________
+
+
+show collections;
+
+db.getCollectionNames();
+
+//
+
+// List down all the users of current database
+
+//
+
+show users;
+
+db.getUsers();
+
+//
+
+// List down all the roles
+
+//
+
+show roles
+
+_______________________
+
+db.<collectionName>.insert([{field1: "value1"}, {field1: "value2"}])
+
+db.<collectionName>.insertMany([{field1: "value1"}, {field1: "value2"}])
+
+
+__________________________
+
+
